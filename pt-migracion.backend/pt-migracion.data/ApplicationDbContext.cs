@@ -55,6 +55,8 @@ namespace pt_migracion.data
                 aEntity.Property(e => e.Id).HasColumnType("uniqueidentifier").IsRequired();
                 aEntity.Property(e => e.Estado).HasColumnType("nvarchar(45)").IsRequired();
                 aEntity.Property(e => e.TimeStamp).HasColumnType("datetime2").IsRequired();
+
+                aEntity.HasMany(e => e.Equipo).WithOne(e => e.Estados).HasForeignKey(e=>e.EstadoId);
             });
 
             theModelBuilder.Entity<Equipo>(aEntity =>
@@ -63,7 +65,7 @@ namespace pt_migracion.data
                 aEntity.Property(e => e.Id).HasColumnType("uniqueidentifier").IsRequired();
                 aEntity.HasOne(e => e.Solicitud).WithOne(e => e.Equipo);
                 aEntity.HasOne(e => e.Persona).WithMany(e => e.Equipos);
-                aEntity.HasOne(e => e.Estados).WithOne(e => e.Equipo);
+                aEntity.HasOne(e => e.Estados).WithMany(e => e.Equipo);
                 aEntity.Property(e => e.TimeStamp).HasColumnType("datetime2").IsRequired();
             });
 
