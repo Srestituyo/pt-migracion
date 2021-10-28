@@ -1,17 +1,44 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{34CC59EA-A3C3-4B45-8A8E-81B5EF3BA8C4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="pt-migracion.webapi/Migrations/20211028123747_InitalDbMigration.Designer.cs">
+    <Files>
+      <File FileName="pt-migracion.data/ApplicationDbContext.cs" Line="25" Column="1" />
+      <File FileName="pt-migracion.data/Entity/Persona.cs" Line="22" Column="66" />
+      <File FileName="pt-migracion.data/Entity/Solicitud.cs" Line="12" Column="37" />
+      <File FileName="pt-migracion.data/Entity/Estados.cs" Line="4" Column="12" />
+      <File FileName="pt-migracion.data/Entity/Equipo.cs" Line="2" Column="8" />
+      <File FileName="pt-migracion.webapi/Startup.cs" Line="33" Column="82" />
+      <File FileName="pt-migracion.webapi/Program.cs" Line="16" Column="1" />
+      <File FileName="pt-migracion.webapi/Controllers/WeatherForecastController.cs" Line="40" Column="1" />
+      <File FileName="pt-migracion.data/pt-migracion.data.csproj" Line="20" Column="1" />
+      <File FileName="pt-migracion.webapi/Migrations/20211028123747_InitalDbMigration.Designer.cs" Line="25" Column="43" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="pt-migracion.backend" selected="True" />
+          <Node name="pt-migracion.backend" expanded="True">
+            <Node name="pt-migracion.data" expanded="True" />
+            <Node name="pt-migracion.webapi" expanded="True">
+              <Node name="Migrations" expanded="True">
+                <Node name="20211028123747_InitalDbMigration.cs" expanded="True">
+                  <Node name="20211028123747_InitalDbMigration.Designer.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.pt-migracion.webapi PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/sebastianrestituyo/Documents/repos/pt-migracion/pt-migracion.backend/pt-migracion.data/ApplicationDbContext.cs" relfile="pt-migracion.data/ApplicationDbContext.cs" line="25" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
