@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using pt_migracion.data;
 
@@ -14,7 +15,9 @@ namespace pt_migracion.webapi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.11");
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.11")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("pt_migracion.data.Entity.Equipo", b =>
                 {
@@ -23,7 +26,7 @@ namespace pt_migracion.webapi.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("FechaDeCreacion")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("PersonaId")
                         .HasColumnType("uniqueidentifier");
@@ -77,7 +80,8 @@ namespace pt_migracion.webapi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("FechaNacimiento")
+                    b.Property<string>("FechaNacimiento")
+                        .IsRequired()
                         .HasColumnType("nvarchar(45)");
 
                     b.Property<string>("FotoPath")
@@ -90,10 +94,10 @@ namespace pt_migracion.webapi.Migrations
 
                     b.Property<int>("Pasaporte")
                         .HasMaxLength(9)
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Sexo")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TimeStamp")
                         .HasColumnType("datetime2");

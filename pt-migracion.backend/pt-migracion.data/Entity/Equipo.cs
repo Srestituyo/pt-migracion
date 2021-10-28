@@ -11,7 +11,11 @@ namespace pt_migracion.data.Entity
 
         public Guid SolicitudId { get; set; }
 
-        public virtual Solicitud Solicitud { get; set;}
+        public virtual Solicitud Solicitud { get; set; }
+
+        public Guid EstadoId { get; set; }
+
+        public virtual Estados Estados{ get; set; }
 
         public DateTime FechaDeCreacion { get; set; }
     }

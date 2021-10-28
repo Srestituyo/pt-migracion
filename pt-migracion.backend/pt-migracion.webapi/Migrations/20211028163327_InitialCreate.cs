@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace pt_migracion.webapi.Migrations
 {
-    public partial class InitalDbMigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,10 +27,10 @@ namespace pt_migracion.webapi.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(45)", maxLength: 45, nullable: false),
                     Apellido = table.Column<string>(type: "nvarchar(45)", maxLength: 45, nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(type: "nvarchar(45)", nullable: false),
-                    Pasaporte = table.Column<int>(type: "INTEGER", maxLength: 9, nullable: false),
+                    FechaNacimiento = table.Column<string>(type: "nvarchar(45)", nullable: false),
+                    Pasaporte = table.Column<int>(type: "int", maxLength: 9, nullable: false),
                     Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Sexo = table.Column<string>(type: "TEXT", nullable: true),
+                    Sexo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -60,7 +60,7 @@ namespace pt_migracion.webapi.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PersonaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     SolicitudId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FechaDeCreacion = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    FechaDeCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

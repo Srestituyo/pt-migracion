@@ -26,9 +26,9 @@ namespace pt_migracion.service
             throw new NotImplementedException();
         }
 
-        public Task<Solicitud> GetSolicitudByIdAsync(Guid theSolicitudId)
+        public async Task<Solicitud> GetSolicitudByIdAsync(Guid theSolicitudId)
         {
-            throw new NotImplementedException();
+            return await _aSolicitudRepository.GetSolicitudByIdAsync(theSolicitudId);
         }
 
         public Task UpdateSolicitudAsync(Solicitud theUpdatedSolicitud)

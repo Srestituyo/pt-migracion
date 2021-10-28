@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using pt_migracion.data;
 using pt_migracion.data.Entity;
 using pt_migracion.repository.Interface;
@@ -16,24 +17,57 @@ namespace pt_migracion.repository
             _aApplicationDbContext = theApplicationDbContext;
         }
 
-        public Task AddPersonaAsync(Persona theNewPersona)
+        public async Task AddPersonaAsync(Persona theNewPersona)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _aApplicationDbContext.Add(theNewPersona);
+                await _aApplicationDbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
-        public Task<ICollection<Persona>> GetAllPersonaAsync()
+        public async Task<ICollection<Persona>> GetAllPersonaAsync()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var aPersonaList = await _aApplicationDbContext.Persona.ToListAsync();
+                return aPersonaList;
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException();
+            }
         }
 
-        public Task<Persona> GetPersonaByIdAsync(Guid thePersonaId)
+        public async Task<Persona> GetPersonaByIdAsync(Guid thePersonaId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var aPersona = await _aApplicationDbContext.Persona.FindAsync(thePersonaId);
+
+                return aPersona;
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException();
+            }
         }
 
-        public Task UpdatePersonaAsync(Persona theUpdatedPersona)
+        public async Task UpdatePersonaAsync(Persona theUpdatedPersona)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _aApplicationDbContext.Update(theUpdatedPersona);
+                await _aApplicationDbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException();
+            }
         }
     }
 }

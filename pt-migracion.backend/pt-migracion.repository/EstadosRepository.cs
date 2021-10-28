@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using pt_migracion.data;
 using pt_migracion.data.Entity;
 using pt_migracion.repository.Interface;
@@ -16,19 +17,22 @@ namespace pt_migracion.repository
             _aApplicationDbcontext = theApplicationDbContext;
         }
 
-        public Task AddEstadoAsync(Estados theNewEstado)
+        public async Task AddEstadoAsync(Estados theNewEstado)
         {
-            throw new NotImplementedException();
+            _aApplicationDbcontext.Estados.Add(theNewEstado);
+            await _aApplicationDbcontext.SaveChangesAsync();
         }
 
-        public Task<ICollection<Estados>> GetAllEstadoAsync()
+        public async Task<ICollection<Estados>> GetAllEstadoAsync()
         {
-            throw new NotImplementedException();
+            var aEstadoList = await _aApplicationDbcontext.Estados.ToListAsync();
+            return aEstadoList;
         }
 
-        public Task<Estados> GetEstadoByIdAsync(Guid theEstadoId)
+        public async Task<Estados> GetEstadoByIdAsync(Guid theEstadoId)
         {
-            throw new NotImplementedException();
+            var aEstado = await _aApplicationDbcontext.Estados.FindAsync(theEstadoId);
+            return aEstado;
         }
     }
 }

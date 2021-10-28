@@ -15,21 +15,6 @@ namespace pt_migracion.data
 
         public DbSet<Solicitud> Solicitud { get; set; }
 
-        private string DbPath  {get;  set; }
-    
-
-        public ApplicationDbContext()
-        {
-            var aFolder = Environment.SpecialFolder.LocalApplicationData;
-            var aPath = Environment.GetFolderPath(aFolder);
-            DbPath = $"{aPath}{System.IO.Path.DirectorySeparatorChar}migracion.db";
-        }
-
-        // The following configures EF to create a Sqlite database file in the
-        // special "local" folder for the platform.
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={DbPath}");
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         { 
@@ -78,6 +63,7 @@ namespace pt_migracion.data
                 aEntity.Property(e => e.Id).HasColumnType("uniqueidentifier").IsRequired();
                 aEntity.HasOne(e => e.Solicitud).WithOne(e => e.Equipo);
                 aEntity.HasOne(e => e.Persona).WithMany(e => e.Equipos);
+                aEntity.HasOne(e => e.Estados).WithOne(e => e.Equipo);
                 aEntity.Property(e => e.TimeStamp).HasColumnType("datetime2").IsRequired();
             });
 

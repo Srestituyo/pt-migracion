@@ -16,19 +16,21 @@ namespace pt_migracion.service
             _aEstadoRepository = theEstadoRepository;
         }
 
-        public Task AddEstadoAsync(Estados theNewEstado)
+        public async Task AddEstadoAsync(Estados theNewEstado)
         {
-            throw new NotImplementedException();
+            theNewEstado.TimeStamp = DateTime.UtcNow;
+
+            await _aEstadoRepository.AddEstadoAsync(theNewEstado);
         }
 
-        public Task<ICollection<Estados>> GetAllEstadoAsync()
+        public async Task<ICollection<Estados>> GetAllEstadoAsync()
         {
-            throw new NotImplementedException();
+            return await _aEstadoRepository.GetAllEstadoAsync();
         }
 
-        public Task<Estados> GetEstadoByIdAsync(Guid theEstadoId)
+        public async Task<Estados> GetEstadoByIdAsync(Guid theEstadoId)
         {
-            throw new NotImplementedException();
+            return await _aEstadoRepository.GetEstadoByIdAsync(theEstadoId);
         }
     }
 }

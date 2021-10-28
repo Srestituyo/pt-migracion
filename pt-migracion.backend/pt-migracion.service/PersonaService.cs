@@ -16,24 +16,24 @@ namespace pt_migracion.service
             _aPersonaRepository = thePersonaRepository;
         }
 
-        public Task AddPersonaAsync(Persona theNewPersona)
+        public async Task AddPersonaAsync(Persona theNewPersona)
         {
-            throw new NotImplementedException();
+            await _aPersonaRepository.AddPersonaAsync(theNewPersona);
         }
 
-        public Task<ICollection<Persona>> GetAllPersonaAsync()
+        public async Task<ICollection<Persona>> GetAllPersonaAsync()
         {
-            throw new NotImplementedException();
+            return await _aPersonaRepository.GetAllPersonaAsync();
         }
 
-        public Task<Persona> GetPersonaByIdAsync(Guid thePersonaId)
+        public async Task<Persona> GetPersonaByIdAsync(Guid thePersonaId)
         {
-            throw new NotImplementedException();
+            return await _aPersonaRepository.GetPersonaByIdAsync(thePersonaId);
         }
 
-        public Task UpdatePersonaAsync(Persona theUpdatedPersona)
-        {
-            throw new NotImplementedException();
+        public async Task UpdatePersonaAsync(Persona theUpdatedPersona)
+        { 
+            await _aPersonaRepository.UpdatePersonaAsync(theUpdatedPersona);
         }
     }
 }
