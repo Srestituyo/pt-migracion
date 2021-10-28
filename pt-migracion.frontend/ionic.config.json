@@ -1,0 +1,7 @@
+{
+  "name": "mt-migracion.frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

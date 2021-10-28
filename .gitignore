@@ -1,0 +1,15 @@
+pt-migracion.backend/pt-migracion.data/obj/*
+pt-migracion.backend/pt-migracion.repository/obj/*
+pt-migracion.backend/pt-migracion.service/obj/*
+pt-migracion.backend/pt-migracion.webapi/obj/*
+
+
+pt-migracion.backend/pt-migracion.data/debug/*
+pt-migracion.backend/pt-migracion.repository/debug/*
+pt-migracion.backend/pt-migracion.service/debug/*
+pt-migracion.backend/pt-migracion.webapi/debug/*
+
+pt-migracion.backend/pt-migracion.data/bin/*
+pt-migracion.backend/pt-migracion.repository/bin/*
+pt-migracion.backend/pt-migracion.service/bin/*
+pt-migracion.backend/pt-migracion.webapi/bin/*

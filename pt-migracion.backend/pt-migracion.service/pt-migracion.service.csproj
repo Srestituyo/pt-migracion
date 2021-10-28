@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>pt_migracion.service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pt-migracion.repository\pt-migracion.repository.csproj" />
+    <ProjectReference Include="..\pt-migracion.data\pt-migracion.data.csproj" />
+  </ItemGroup>
+</Project>
