@@ -5,4 +5,13 @@
     <RootNamespace>pt_migracion.repository</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pt-migracion.data\pt-migracion.data.csproj" />
+  </ItemGroup>
 </Project>
